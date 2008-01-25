@@ -1,0 +1,128 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{CJK}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{bbding}     % 一些特殊的符号
+\usepackage[indentafter]{titlesec}
+%\usepackage[dvipdfm,CJKbookmarks]{hyperref}
+\usepackage{xspace,colortbl}
+
+\setlength{\textwidth}{14.5cm}
+
+%\PD{f}{x} 用来产生f对x的偏导数
+\newcommand{\PD}[2]{\dfrac{\partial #1}{\partial #2}}
+\def \half {\frac{1}{2}}
+\def \Half {\dfrac{1}{2}}
+
+\newtheorem{theorem}{{\heiti 定理}}[section]
+\newtheorem{theoremson}{{\heiti 定理}}[subsection]
+\newtheorem{definition}[theorem]{{\heiti 定义}}
+\newtheorem{definitionson}[theoremson]{{\heiti 定义}}
+\newtheorem{corollary}[theorem]{{\heiti 推论}}
+\newtheorem{corollaryson}[theoremson]{{\heiti 推论}}
+\newtheorem{lemma}[theorem]{{\heiti 引理}}
+\newtheorem{lemmason}[theoremson]{{\heiti 引理}}
+%
+%\renewcommand{\theequation}{\thechapter.\arabic{section}.\arabic{equation}}
+%\renewcommand{\thefigure}{\thechapter.\arabic{figure}}
+
+\titleformat{\chapter}[hang]{\huge\bfseries\filcenter}%
+{第~\thechapter~章}{1em}{}[\thispagestyle{empty}]
+\titlespacing*{\chapter}{0pt}{-21pt}{18pt}
+\titleformat{\section}[hang]{\Large\bfseries\centering}%
+{\thesection}{1em}{}
+\titlespacing*{\section}{0cm}{3.5ex plus 1ex minus .2ex}{2.4ex plus .2ex}
+\titleformat{\subsection}[hang]{\large\bfseries}{\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0cm}{1.75ex plus 0.5ex minus .1ex}{1.15ex plus .1ex}
+\titleformat{\subsubsection}[hang]{\bfseries}{\thesubsubsection}{1em}{}
+\titlespacing*{\subsubsection}{0cm}{1.75ex plus 0.5ex minus .1ex}{1.15ex plus .1ex}
+
+%MetaPost 编译后的文件XXX.1等可以直接使用
+%\DeclareGraphicsRule{.eps}{eps}{.eps}{}
+\ifx\pdfoutput\undefined
+  \DeclareGraphicsRule{*}{eps}{*}{}
+\else
+  \DeclareGraphicsRule{*}{mps}{*}{}
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                          定义PDF文档属性                                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\hypersetup{pdftitle={Semi-Lagrange方法的研究和数值试验},
+%  pdfsubject={报告题目},
+%  pdfauthor={张瑞,中国科学技术大学,<rui@ustc.edu.cn>},
+%  pdfkeywords={},
+%  pdfpagemode={FullScreen},
+%  colorlinks={true},
+%  linkcolor={red}
+%  }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                        重定义字体、字号命令                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\song}{\CJKfamily{song}}    % 宋体   (Windows自带simsun.ttf)
+\newcommand{\fs}{\CJKfamily{fs}}        % 仿宋体 (Windows自带simfs.ttf)
+\newcommand{\kai}{\CJKfamily{kai}}      % 楷体   (Windows自带simkai.ttf)
+\newcommand{\hei}{\CJKfamily{hei}}      % 黑体   (Windows自带simhei.ttf)
+\newcommand{\li}{\CJKfamily{li}}        % 隶书   (Windows自带simli.ttf)
+\newcommand{\you}{\CJKfamily{you}}      % 幼圆   (Windows自带simyou.ttf)
+\newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}     % 字号设置
+\newcommand{\xiaochuhao}{\fontsize{36pt}{\baselineskip}\selectfont} % 字号设置
+\newcommand{\yichu}{\fontsize{32pt}{\baselineskip}\selectfont}      % 字号设置
+\newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}      % 字号设置
+\newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}      % 字号设置
+\newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}  % 字号设置
+\newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}  % 字号设置
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}      % 字号设置
+\newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}  % 字号设置
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}    % 字号设置
+\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}   % 字号设置
+\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}  % 字号设置
+\newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}    % 字号设置
+
+\begin{document}
+\begin{CJK*}{GBK}{song}
+\CJKindent \CJKtilde
+\CJKcaption{GB}
+\title{Lab05 线性方程组求根的直接法}
+\date{}
+%\author{张瑞 \thanks{中国科学技术大学数学系}}
+\maketitle
+
+\section{要求}
+\begin{enumerate}
+  \item {编写列主元消元法的通用程序}
+  \item {用如上程序求方程
+  $$
+      \left(\begin{array}{ccccccccc}
+       31&-13&  0&  0&  0&-10&  0&  0&  0\\
+      -13& 35& -9&  0&-11&  0&  0&  0&  0\\
+        0& -9& 31&-10&  0&  0&  0&  0&  0\\
+        0&  0&-10& 79&-30&  0&  0&  0& -9\\
+        0&  0&  0&-30& 57& -7&  0& -5&  0\\
+        0&  0&  0&  0& -7& 47&-30&  0&  0\\
+        0&  0&  0&  0&  0&-30& 41&  0&  0\\
+        0&  0&  0&  0& -5&  0&  0& 27& -2\\
+        0&  0&  0& -9&  0&  0&  0& -2& 29\\
+      \end{array}\right)x=
+      \left(\begin{array}{c}
+      -15\\27\\-23\\0\\-20\\12\\-7\\7\\10
+      \end{array}\right)
+  $$
+  的根，并打印出来}
+\end{enumerate}
+
+\section{输出}
+示例如下： \\
+根为：\\
+ XXXXXXXXXXXXXXXXX \\
+ XXXXXXXXXXXXXXXXX \\
+ XXXXXXXXXXXXXXXXX \\
+........ \\
+ XXXXXXXXXXXXXXXXX \\
+
+\newpage
+
+\end{CJK*}
+\end{document}
