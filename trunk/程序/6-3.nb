@@ -1,0 +1,233 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      8021,        191]*)
+(*NotebookOutlinePosition[      8665,        213]*)
+(*  CellTagsIndexPosition[      8621,        209]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(\(\( (*\(\(**\)\(**\)\)*\ 
+        PB02000603\ kong\ xiang\ long\ *****) \)\(\[IndentingNewLine]\)\( \
+(*\(\(**\)\(**\)\)*\ 
+        The\ sixth\ chaple\ \ page135\ 6.3\ \
+*****) \)\(\[IndentingNewLine]\)\(rep = 
+      3; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \  (*\ the\ times\ of\ repetition\ *) \[IndentingNewLine]n = 
+      Input["\<Please input n value (dim of Ax=c):\>"]; \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \  (*\ dim\ of\ A\ *) \[IndentingNewLine]a = 
+      Table[0, {i, 1, n}, {j, 1, 
+          n}]; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  (*\ 
+      Matrix\ A\ *) \[IndentingNewLine]b = 
+      Table[0, {i, 1, 
+          n}]; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \  (*\ Maxtrix\ B\ *) \[IndentingNewLine]For[i = 1, 
+      i \[LessEqual] n, \(i++\), 
+      For[j = 1, j \[LessEqual] n, \(j++\), 
+        a[\([i, j]\)] = Input["\<Please input a\>"[i, j]]]]\ \ \ \  (*\ 
+      construct\ A\ *) \[IndentingNewLine]
+    For[i = 1, i \[LessEqual] n, \(i++\), 
+      b[\([i]\)] = 
+        Input["\<Please input the b\>"[
+            i]]]; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  (*\ 
+      construct\ B\ *) \[IndentingNewLine]dl = 
+      Table[If[i >= j, a[\([i, j]\)], 0], {i, 1, n}, {j, 1, 
+          n}]; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+ (*\ Matrix\ D + L\ *) \[IndentingNewLine]u = 
+      Table[If[i < j, a[\([i, j]\)], 0], {i, 1, n}, {j, 1, 
+          n}]; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \  (*\ 
+      Matrix\ U\ *) \[IndentingNewLine]s = \(-Inverse[dl] . 
+          u\); \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \  (*\ 
+      the\ Gauss - Seidel\ repetition\ matrix\ *) \[IndentingNewLine]f = 
+      Inverse[dl] . 
+        b; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \  (*\ Matrix\ f\ *) \[IndentingNewLine]Print["\<X(k+1)=\>", 
+      MatrixForm[s], "\<X(k)+\>", 
+      MatrixForm[
+        f]\ ]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \[IndentingNewLine]
+    \(x = 
+        Table[0, {i, 1, 
+            n}];\)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \[IndentingNewLine]
+    For[i = 1, i \[LessEqual] rep, \(i++\), 
+      Print["\<X(\>", i, "\<) = \>", 
+        N[x = s . x + f, 10]]]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \  (*\ 
+      repetition\ *) \[IndentingNewLine]
+    \)\)\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"X(k+1)=\"\>", "\[InvisibleSpace]", 
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {"0", \(1\/10\), "0", "0"},
+                {"0", \(1\/100\), \(1\/10\), "0"},
+                {"0", \(1\/1000\), \(1\/100\), \(1\/10\)},
+                {"0", \(1\/10000\), \(1\/1000\), \(1\/100\)}
+                }], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]], "\[InvisibleSpace]", "\<\"X(k)+\"\>", 
+        "\[InvisibleSpace]", 
+        InterpretationBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {\(1\/10\)},
+                {\(1\/100\)},
+                {\(101\/1000\)},
+                {\(2101\/10000\)}
+                }], "\[NoBreak]", ")"}],
+          MatrixForm[ {
+            Rational[ 1, 10], 
+            Rational[ 1, 100], 
+            Rational[ 101, 1000], 
+            Rational[ 2101, 10000]}]]}],
+      SequenceForm[ "X(k+1)=", 
+        MatrixForm[ {{0, 
+          Rational[ 1, 10], 0, 0}, {0, 
+          Rational[ 1, 100], 
+          Rational[ 1, 10], 0}, {0, 
+          Rational[ 1, 1000], 
+          Rational[ 1, 100], 
+          Rational[ 1, 10]}, {0, 
+          Rational[ 1, 10000], 
+          Rational[ 1, 1000], 
+          Rational[ 1, 100]}}], "X(k)+", 
+        MatrixForm[ {
+          Rational[ 1, 10], 
+          Rational[ 1, 100], 
+          Rational[ 101, 1000], 
+          Rational[ 2101, 10000]}]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("X("\[InvisibleSpace]1\[InvisibleSpace]") = "\
+\[InvisibleSpace]{0.1`10. , 0.01`10. , 0.101`10. , 0.2101`10. }\),
+      SequenceForm[ 
+      "X(", 1, ") = ", {0.1`10., 0.01`10., 0.101`10., 0.2101`10.}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("X("\[InvisibleSpace]2\[InvisibleSpace]") = "\
+\[InvisibleSpace]{0.101`10. , 0.0202`10.000000000000004, 
+          0.12303`9.999999999999998, 0.212303`10. }\),
+      SequenceForm[ 
+      "X(", 2, ") = ", {0.101`10., 0.0202`10.000000000000004, 
+        0.12303`9.999999999999998, 0.212303`10.}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("X("\[InvisibleSpace]3\[InvisibleSpace]") = "\
+\[InvisibleSpace]{0.10202`10. , 0.022505`10. , 0.1234808`10. , 
+          0.21234808`9.999999999999998}\),
+      SequenceForm[ 
+      "X(", 3, ") = ", {0.10202`10., 0.022505`10., 0.1234808`10., 
+        0.21234808`9.999999999999998}],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input"]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 695}},
+WindowSize->{1016, 668},
+WindowMargins->{{0, Automatic}, {Automatic, 0}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 3690, 65, 330, "Input"],
+Cell[5469, 120, 1505, 41, 105, "Print"],
+Cell[6977, 163, 274, 5, 25, "Print"],
+Cell[7254, 170, 366, 7, 25, "Print"],
+Cell[7623, 179, 353, 7, 25, "Print"]
+}, Open  ]],
+Cell[7991, 189, 26, 0, 30, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

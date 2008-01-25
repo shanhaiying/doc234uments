@@ -1,0 +1,94 @@
+\documentclass[12pt]{ustcexam}
+%\input{greektex}
+\newcommand\uppi{\text{\gr p}}
+
+\def\ds{\displaystyle}
+
+\renewcommand{\biaoti}[1]{\begin{spacing}{1.3}\begin{center}\Large\zihao{2}
+                          #1\end{center}\end{spacing}\medskip}
+
+\begin{document}
+\begin{CJK*}{GBK}{song}
+\CJKindent \CJKtilde \CJKcaption{GB}
+% 以下是将试卷的密封线。
+\mifengxian
+
+\pagestyleB
+%\juemi
+% 中国科学技术大学 试卷标准
+\biaoti{\huge 中国科学技术大学\\[0.2cm]
+     \heiti 2004 -- 2005 学年 第\ 2\ 学期考试试卷}
+
+\begin{minipage}{0.9 \textwidth}
+{\zihao{5} 考试科目：\underline{ 计\ 算\ 方\ 法\ }\hspace{4.93cm}
+得分：\underline{\hspace{2.5cm}}%\hspace{5cm}
+\\
+学生所在系：\underline{\hspace{2.5cm}}\hspace{0.25cm}
+姓名：\underline{\hspace{2.5cm}}\hspace{0.25cm}
+学号：\underline{\hspace{2.5cm}}%\hspace{1cm}
+}
+\end{minipage}
+\\
+\begin{notice}
+\item 答卷前，考生务必将所在系、姓名、学号等填写清楚。 \item
+请考生在答卷纸左侧留出装订区域。 \item
+本试卷为闭卷考试。共~\numquestions{}~道试题，
+      满分~100~分，考试时间~120~分钟。
+\item 计算中保留4位小数。
+\end{notice}
+
+\begin{problems}
+\pingfen{一、填空题} \qu
+(4分)设$f(x)=3x^6+6x^4-5x^2+1$，则$f[-1,0,1]=\twob$ ，
+$f[-3,-2,-1,0,1,2,3]=\fourb$。~
+\begin{sol}
+4\rfen{2},3\rfen{2}
+\end{sol}
+\question (4分) 设 $ \ds{A=\begin {pmatrix} 1 & 3 & 1 \\
+6 & -2 & 2 \\ 3 & 2 & 7 \end {pmatrix}}$,\ 则 $ \|A\|_1=$ \sixb ，
+$ \|A\|_\infty =$ \sixb 。
+\begin{sol}
+10\rfen{2},12\rfen{2}
+\end{sol}
+\qu (3分) 设$f(x) \in C^3[a,b]$，则求$f'(\dfrac{a+b}{2})$的
+数值微分公式$\dfrac{f(b)-f(a)}{b-a}$的误差为\\ \tenb \sixb
+\begin{sol}
+$-\dfrac{1}{6}h^2f''(\xi),h=\dfrac{b-a}{2},\xi \in (a,b) $
+\rfen{3}
+\end{sol}
+\qu (4分) 求解方程$f(x)=0$的Newton迭代公式为\tenb\sixb ， \\
+弦截法公式为\tenb\sixb
+\begin{sol}
+$x_{k+1}=x_k-\dfrac{f(x_k)}{f'(x_k)}$\rfen2 ,
+$x_{k+1}=x_k-f(x_k)\dfrac{x_k-x_{k-1}}{f(x_k)-f(x_{k-1})}$ \rfen2
+\end{sol}
+\pingfen{二、解答题} \qu (10分) 给定方程 $x+ln(x)=2$
+\begin{parts}
+\part 分析该方程在区间$[1,2]$上的根的情况；
+\part 用Newton迭代法，取初值$x_0=1.5$，求出该方程的根。(精确到小数点后4位)
+\end{parts}
+\begin{sol}
+$f(x)=x+ln(x)-2$，则$f(1)=-1<0,f(2)=ln(2)>0$ \rfen{2} ，
+且$g'(x)=1+1/x>0,x\in[1,2]$ \rfen{2} ，
+所以有1个根 \rfen{1} \\
+$x_{k+1}=x_k-\dfrac{x_k+ln(x_k)-2}{1+1/x_k}$
+\begin{tabular}{|c|l|}
+\hline
+i & $x_i$  \\
+\hline
+0 & 1.5 \\
+1 & 1.5567 \\
+2 & 1.5572 \\
+3 & 1.5572 \\
+\hline
+\end{tabular} \\
+根为$1.5572$ \rfen{5}
+\end{sol}
+
+\end{problems}
+\solution{答案}
+
+\clearpage
+\end{CJK*}
+
+\end{document}
