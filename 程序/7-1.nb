@@ -1,0 +1,147 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      4528,        108]*)
+(*NotebookOutlinePosition[      5172,        130]*)
+(*  CellTagsIndexPosition[      5128,        126]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(\(\( (*\(\(**\)\(**\)\(**\)\(**\)\(**\)\(**\)\(**\)\)*\ 
+        PB02000603\ kongxianglong\ \
+****************) \)\(\[IndentingNewLine]\)\( (*\(\(**\)\(**\)\(**\)\(**\)\)*\
+\ the\ seventh\ chaple\ page152\ 7.1\  **  **  **  ** ******) \)\(\
+\[IndentingNewLine]\)\(\(epislon = 0.0003;\)\[IndentingNewLine]
+    n = Input["\<Please input n value (dim of A):\>"]; \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \  (*\ dim\ of\ A\ *) \[IndentingNewLine]A = 
+      Table[0, {i, 1, n}, {j, 1, 
+          n}]; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  (*\ 
+      Matrix\ A\ *) \[IndentingNewLine]For[i = 1, i \[LessEqual] n, \(i++\), 
+      For[j = 1, j \[LessEqual] n, \(j++\), 
+        A[\([i, j]\)] = Input["\<Please input A\>"[i, j]]]]\ ;\ \ \  (*\ 
+      construct\ A\ *) \[IndentingNewLine]
+    \(x = Table[0.5 + i, {i, 1, n}];\)\[IndentingNewLine]
+    \(y = x/Norm[x, Infinity];\)\[IndentingNewLine]
+    xtemp1 = Table[5, {i, 1, n}]; xtemp2 = Table[10, {i, 1, n}]; 
+    xtemp3 = Table[15, {i, 1, n}];\[IndentingNewLine]
+    \(ytemp = Table[2, {i, 1, n}];\)\[IndentingNewLine]
+    lamda1 = 0; lamda2 = 0;\[IndentingNewLine]
+    \(v1 = Table[0, {i, 1, n}];\)\[IndentingNewLine]
+    \(v2 = Table[0, {i, 1, n}];\)\[IndentingNewLine]
+    \(flag = 0;\)\[IndentingNewLine]
+    For[i = 1, flag == 0, \[IndentingNewLine]\(i++\); xtemp3 = xtemp2; 
+      xtemp2 = xtemp1; xtemp1 = x; ytemp = y, \[IndentingNewLine]x = A . y; 
+      y = x/Norm[x, Infinity]; 
+      Which[Norm[x - xtemp1, 2] < epislon, flag = 1; 
+        lamda1 = Norm[x, Infinity]; v1 = y, Norm[x - xtemp2, 2] < epislon, 
+        flag = 1; 
+        If[Norm[xtemp1 + x, 2] <= 
+            epislon, \[IndentingNewLine]lamda1 = \(-Norm[x, Infinity]\); 
+          v1 = y, \[IndentingNewLine]xtemp = x; x = A . x; 
+          lamda1 = Sqrt[x[\([1]\)]/ytemp[\([1]\)]]; lamda2 = \(-lamda1\); 
+          v1 = x + lamda1*xtemp; v2 = x - lamda1*xtemp]]]\[IndentingNewLine]
+    If[Abs[lamda1] > 10  epislon, Print["\<lamda1=\>", N[lamda1]]; 
+      Print["\<v1=\>", N[v1]]]\[IndentingNewLine]
+    If[Abs[lamda2] > 10  epislon, Print["\<lamda2=\>", N[lamda2]]; 
+      Print["\<v2=\>", N[v2]]]\[IndentingNewLine]\[IndentingNewLine]
+    \)\)\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[\("lamda1="\[InvisibleSpace]4.999978645970808`\),
+      SequenceForm[ "lamda1=", 4.999978645970808],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("v1="\[InvisibleSpace]{0.9999707273362869`, \
+\(-0.000011181162597101827`\), 0.9999999999999999`}\),
+      SequenceForm[ 
+      "v1=", {.99997072733628689, -.000011181162597101827, \
+.99999999999999989}],
+      Editable->False]], "Print"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 695}},
+WindowSize->{1008, 668},
+WindowMargins->{{0, Automatic}, {Automatic, 0}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 2284, 39, 510, "Input"],
+Cell[4063, 94, 170, 3, 25, "Print"],
+Cell[4236, 99, 276, 6, 25, "Print"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

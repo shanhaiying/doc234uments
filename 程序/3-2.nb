@@ -1,0 +1,149 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      4253,        109]*)
+(*NotebookOutlinePosition[      4897,        131]*)
+(*  CellTagsIndexPosition[      4853,        127]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(\(\( (*\(\(**\)\(**\)\)*
+        PB02000603\ \ kongxianglong******) \)\(\[IndentingNewLine]\)\( (*\(\(\
+**\)\(**\)\(the\)\)\ third\ chapel\ page77\ \ 3.2*****) \)\(\
+\[IndentingNewLine]\)\(\[IndentingNewLine]\)\(<< 
+      LinearAlgebra`MatrixManipulation`\[IndentingNewLine]
+    n = Input["\<Please input the Interpolation order you want(1 or 2).\>"]\ \
+; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \
+(*choose\ the\ order*) \[IndentingNewLine]pp = {{\(-1.00\), 
+          0.2200}, {\(-0.50\), 0.800}, {0.00, 2.000}, {0.25, 2.5000}, {0.75, 
+          3.8000}}; \ \ \ \ \ \ \ \ \  (*\(**\)\(data\)\
+***) \[IndentingNewLine]a1 = 
+      Table[pp[\([i, 1]\)]^j, {i, 1, 5}, {j, 
+          n}];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \[IndentingNewLine]
+    one = 
+      Table[1, {i, 5}, {j, 
+          1}]; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  (*1\
+*) \[IndentingNewLine]A = 
+      AppendRows[one, 
+        a1];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \[IndentingNewLine]
+    \(At = Transpose[A];\)\[IndentingNewLine]
+    \(Y = Table[pp[\([i, 2]\)], {i, 1, 5}];\)\[IndentingNewLine]
+    \(YY = At . Y;\)\[IndentingNewLine]
+    result = 
+      LinearSolve[At . A, 
+        YY]; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  (*roo\
+t*) \[IndentingNewLine]m = Table[x^j, {i, 1}, {j, 0, n}];\[IndentingNewLine]
+    \(f[x_] = m . result;\)\[IndentingNewLine]
+    Print["\<p=\>", \(f[x]\)[\([1]\)]]\[IndentingNewLine]
+    \(var = 
+        Sum[\((f[pp[\([i, 1]\)]] - pp[\([i, 2]\)])\)^2, {i, 1, 
+            5}];\)\[IndentingNewLine]
+    Print["\<Var=\>", var[\([1]\)]]\)\)\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[\("p="\[InvisibleSpace]\(\(\(1.9073555511733389`\)\(\
+\[InvisibleSpace]\)\) + 2.204448826661408`\ x + 
+          0.47223821731413906`\ x\^2\)\),
+      SequenceForm[ "p=", 
+        Plus[ 1.9073555511733389, 
+          Times[ 2.204448826661408, x], 
+          Times[ .47223821731413906, 
+            Power[ x, 2]]]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("Var="\[InvisibleSpace]0.026608400709919138`\),
+      SequenceForm[ "Var=", .026608400709919138],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input"]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 695}},
+WindowSize->{1016, 668},
+WindowMargins->{{0, Automatic}, {Automatic, 0}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 1873, 35, 370, "Input"],
+Cell[3652, 90, 384, 9, 25, "Print"],
+Cell[4039, 101, 169, 3, 25, "Print"]
+}, Open  ]],
+Cell[4223, 107, 26, 0, 30, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

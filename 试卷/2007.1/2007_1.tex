@@ -1,0 +1,384 @@
+\documentclass[12pt,letter]{ustcexam}
+%\input{greektex}
+\newcommand\uppi{\text{\gr p}}
+
+\def\ds{\displaystyle}
+
+\renewcommand{\biaoti}[1]{\begin{spacing}{1.3}\begin{center}\Large\zihao{2}
+                          #1\end{center}\end{spacing}\medskip}
+
+\begin{document}
+\begin{CJK*}{GBK}{song}
+\CJKindent \CJKtilde \CJKcaption{GB}
+% 以下是将试卷的密封线。
+\mifengxian
+
+\pagestyleB
+%\juemi
+% 中国科学技术大学 试卷标准
+%\biaoti{\huge 中国科学技术大学\\[0.2cm]
+%     \heiti 2006 -- 2007 学年 第\ 1\ 学期考试试卷 }
+\YearB{2006}
+\YearE{2007}
+\Xueqi{1}
+\Kemu{数\ 值\ 计\ 算\ 方\ 法\ }
+\Maketitle
+\Makedefen
+
+%\begin{minipage}{0.9 \textwidth}
+%{\zihao{5}
+%考试科目：\underline{ 计\ 算\ 方\ 法\ }\hspace{4.93cm}
+%得分：\underline{\hspace{2.5cm}}%\hspace{5cm}
+%\\
+%学生所在系：\underline{\hspace{2.5cm}}\hspace{0.25cm}
+%姓名：\underline{\hspace{2.5cm}}\hspace{0.25cm}
+%学号：\underline{\hspace{2.5cm}}%\hspace{1cm}
+%}
+%\end{minipage}
+\vspace{1em}
+\begin{notice}
+\item 答卷前，考生务必将所在系、姓名、学号等填写清楚。
+\item 请考生在答卷纸左侧留出装订区域。
+\item 本试卷为闭卷考试。共~\numquestions{}~道试题，
+      满分~100~分，考试时间~120~分钟。
+\item 计算中保留4位小数。
+\end{notice}
+
+\begin{problems}
+\pingfen{一、填空题}
+\qu (6分)设$f(x)=3x^3+6x^2+1$，则$f[-1,0,1,]=\twob$ ，$f[0,1,2,3]=$ \sixb 。~
+\begin{sol}
+6\rfen{3},3\rfen{3}
+\end{sol}
+
+\qu (6分) 设 $ \ds{A=\begin {pmatrix} 1 & 2 \\ -2 & 3 \end {pmatrix}}$，
+\ 则 $ \rho(A)=$ \sixb ， $ Cond_1(A) =$ \sixb 。
+\begin{sol}
+$\sqrt 7$\rfen{3},25/7\rfen{3}
+\end{sol}
+
+\qu (3分) 设$l_0(x)$，$l_1(x)$，$l_2(x)$，$l_3(x)$是以$x_0,x_1,x_2,x_3$为互异
+节点的3次插值基函数，\\
+则$\displaystyle \sum_{i=0}^{3}l_j(x)(x_j-2)^3=$\sixb。
+\begin{sol}
+$(x-2)^3$ \rfen3
+\end{sol}
+
+\qu (6分) 设矩阵$A=\begin{pmatrix}1 & a & a \\ a & 1 & 0 \\ a & 0 & 1
+\end{pmatrix}$，则$a$在\tenb\twob 范围内时，对线性方程组$Ax=b$的Gauss消元法能够
+进行。
+\begin{sol}
+$a\neq\pm 1 , a\neq\pm\dfrac{\sqrt2}{2} $ \rfen6
+$det\begin{pmatrix}1 & a \\ a & 1\end{pmatrix}=1-a^2\neq 0$
+$det\begin{pmatrix}1 & a & a \\ a & 1 & 0 \\ a & 0 & 1\end{pmatrix}
+=1-2 a^2\neq 0$
+\end{sol}
+
+\qu (6分) 设 $X=(x_1,x_2,x_3)^T$，则如下的三种公式能否成为向量范数， \\
+$|x_1|+3|x_2|+4|x_3|$\twob\oneb ，
+$|x_1|+3|x_2+x_1|+4|x_3|$\twob\oneb ，
+$|x_1|+3|x_2|$\twob\oneb 。
+\begin{sol} 是\rfen{2}，是\rfen{2}，否\rfen{2}
+\end{sol}
+
+\newpage
+\pingfen{二、解答题}
+\qu (10分) 取初值$1.3$，用Newton迭代法求$\sqrt[4]{3}$的近似值，结果精确到小数
+点后5位。
+\begin{sol}
+<<<<<<< .mine
+$$
+f(x)=x^4-3
+$$
+$$
+x_{k+1}=x_k-\dfrac{x_k^4-3}{4x_k^3}=\dfrac{3}{4}(x_k+\dfrac{1}{x_k^3})
+$$
+\begin{tabular}{|c|ccc|}
+\hline
+0 & 1  & 2 & 3 \\
+\hline
+1.3 & 1.316375 & 1.316074 & 1.316074 \\
+\hline
+\end{tabular}，
+=======
+$$
+f(x)=x^4-3
+$$
+$$
+x_{k+1}=x_k-\dfrac{x_k^4-3}{4x_k^3}=\dfrac{3}{4}(x_k+\dfrac{1}{x_k^3})
+ \mbox{\rfen5}
+$$
+\begin{tabular}{|c|ccc|}
+\hline
+0 & 1  & 2 & 3 \\
+\hline
+1.3 & 1.316375 & 1.316074 & 1.316074 \\
+\hline
+\end{tabular} \rfen5
+>>>>>>> .r40
+\end{sol}
+
+\vspace*{0.4\textheight}
+
+\qu (10分) 给出数据:
+\begin{tabular}{|c|ccccc|}
+\hline
+$x_i$ & 19  & 25 & 31 & 33 & 34 \\
+\hline
+$y_i$ & 19 & 32.3 & 49 & 73.3 & 97.8 \\
+\hline
+\end{tabular}，
+试对它作出 $ y(x)=a+  b {x^2} $ 形式的拟合函数。
+\begin{sol}
+<<<<<<< .mine
+$$
+\begin{pmatrix}
+ 5 & 4192 \\
+4192 & 3966724
+\end{pmatrix}
+\begin{pmatrix}
+ a \\ b
+\end{pmatrix}
+=\begin{pmatrix}
+  271.4 \\ 267016
+ \end{pmatrix}
+$$
+$$
+\begin{pmatrix}
+ a \\ b
+\end{pmatrix}
+=\begin{pmatrix}
+  -18.915 \\ 0.0873032
+ \end{pmatrix}
+
+$$
+=======
+$$
+\begin{pmatrix}
+ 5 & 4192 \\
+4192 & 3966724
+\end{pmatrix}
+\begin{pmatrix}
+ a \\ b
+\end{pmatrix}
+=\begin{pmatrix}
+  271.4 \\ 267016
+ \end{pmatrix} \mbox{\rfen6}
+$$
+$$
+\begin{pmatrix}
+ a \\ b
+\end{pmatrix}
+=\begin{pmatrix}
+  -18.915 \\ 0.0873032
+ \end{pmatrix} \mbox{\rfen4}
+$$
+>>>>>>> .r40
+\end{sol}
+
+%\vspace*{0.4\textheight}
+
+\newpage
+\qu (10分) 考虑常微分方程初值问题
+$
+\left\{\begin{array}{l}y'=x \sin y \mbox{  ,  } 0\leqslant x\leqslant 1 \\
+y(0)=1
+\end{array}\right.
+$
+用4阶经典的Runge-Kutta公式求$y(0.1)$的近似，取步长$h=0.1$
+$$
+\begin{cases}
+y_{n+1}=y_n+\dfrac{h}{6}\left(K_1+2K_2+2K_3+K_4\right) \\
+K_1=f(x_n,y_n) \\
+K_2=f(x_n+\dfrac{1}{2}h,y_n+\frac{1}{2}hK_1) \\
+K_3=f(x_n+\dfrac{1}{2}h,y_n+\frac{1}{2}hK_2) \\
+K_4=f(x_n+h,y_n+hK_3)
+\end{cases}
+$$
+<<<<<<< .mine
+\begin{sol}
+$$ \begin{array}{l}
+K_1=0 \\
+K_2=0.04207 \\
+K_3=0.04213 \\
+K_4=0.08437 \\
+y(0.1)=1.00421
+\end{array}
+$$
+\end{sol}
+=======
+\begin{sol}
+$$ \begin{array}{l}
+K_1=0 \mbox{\rfen2}\\
+K_2=0.04207 \mbox{\rfen2}\\
+K_3=0.04213 \mbox{\rfen2}\\
+K_4=0.08437 \mbox{\rfen2}\\
+y(0.1)=1.00421 \mbox{\rfen2}
+\end{array}
+$$
+\end{sol}
+>>>>>>> .r40
+
+%\vspace*{0.4\textheight}
+\newpage
+\qu (13分)  用Gauss-Seidel方法求解下列方程组
+$$\begin{cases}
+ 4x_1+x_2-x_3=5\\  x_1+5x_2+ x_3=-4 \\ 2x_1+x_2+6x_3=2
+\end{cases}$$
+1) 写出迭代格式，并用初值$(1,1,1)$迭代2步；
+2) 求迭代矩阵；
+3) 讨论迭代矩阵是否收敛？
+<<<<<<< .mine
+\begin{sol}
+1)
+$$
+  \begin{pmatrix}  1 \\ 1 \\ 1  \end{pmatrix} \to
+  \begin{pmatrix}  5/4 \\ -5/4 \\ 1/8  \end{pmatrix} \to
+  \begin{pmatrix}  51/32 \\ -183/160 \\ -7/960  \end{pmatrix}
+$$
+$$
+  \begin{pmatrix}  1 \\ 1 \\ 1  \end{pmatrix} \to
+  \begin{pmatrix}  1.25 \\ -1.25 \\ 0.125  \end{pmatrix} \to
+  \begin{pmatrix}  1.5938 \\ -1.1438 \\ -0.0073  \end{pmatrix}
+$$
+2)
+$$
+\begin{pmatrix}
+  0  & -1/4 & 1/4 \\
+  0  & 1/20  & -1/4 \\
+0 & 3/40 & -1/24
+\end{pmatrix}
+$$
+3) 收敛，对角占优
+\end{sol}
+=======
+\begin{sol}
+1)
+$$
+  \begin{pmatrix}  1 \\ 1 \\ 1  \end{pmatrix} \to
+  \begin{pmatrix}  5/4 \\ -5/4 \\ 1/8  \end{pmatrix} \to
+  \begin{pmatrix}  51/32 \\ -183/160 \\ -7/960  \end{pmatrix}
+$$
+$$
+  \begin{pmatrix}  1 \\ 1 \\ 1  \end{pmatrix} \to
+  \begin{pmatrix}  1.25 \\ -1.25 \\ 0.125  \end{pmatrix} \to
+  \begin{pmatrix}  1.5938 \\ -1.1438 \\ -0.0073  \end{pmatrix}
+\mbox{\rfen5}
+$$
+2)
+$$
+\begin{pmatrix}
+  0  & -1/4 & 1/4 \\
+  0  & 1/20  & -1/4 \\
+0 & 3/40 & -1/24
+\end{pmatrix}
+\mbox{\rfen5}
+$$
+3) 收敛，对角占优 \rfen3
+\end{sol}
+>>>>>>> .r40
+
+%\vspace*{0.4\textheight}
+\newpage
+\qu (30分)
+\begin{enumerate}
+    \item[1)](8分) 求插值多项式$H(x)$满足条件
+$$
+\begin{array}{l}
+H(\alpha)=f(\alpha),H(0)=f(0),H(-\alpha)=f(-\alpha) \\
+H'(\alpha)=f'(\alpha),H'(0)=f'(0),H'(-\alpha)=f'(-\alpha)
+\end{array}
+$$
+    \item[2)](7分) 若$f(x)$足够光滑，求插值多项式$H(x)$的误差；
+    \item[3)](10分) 确定参数$A$，$B$，$C$和$\alpha$，使得数值积分公式
+$$
+\int_{-2}^{2}f(x)dx\approx A f(\alpha)+B f(0) +C f(-\alpha)
+$$
+具有尽可能高的代数精度，并求这个代数精度。
+    \item[4)](5分) 若$f(x)$足够光滑，求这个数值积分公式的误差
+\end{enumerate}
+\begin{sol}
+<<<<<<< .mine
+1) $g_0(x)f(-\alpha)+g_1(x)f(0)+g_2(x)f(\alpha)+
+     h_0(x)f'(-\alpha)+h_1(x)f'(0)+h_2(x)f'(\alpha)$其中
+$$ \begin{array}{l}
+    g_0(x)=[1-2(x+\alpha)(\dfrac{1}{-\alpha}+\dfrac{1}{-2\alpha})]x^2(x-\alpha)^2 \\
+    g_1(x)=[1-2(x)(\dfrac{1}{\alpha}+\dfrac{1}{-\alpha})](x+\alpha)^2(x-\alpha)^2 \\
+    g_2(x)=[1-2(x-\alpha)(\dfrac{1}{2\alpha}+\dfrac{1}{\alpha})](x+\alpha)^2  x^2 \\
+    h_0(x)=(x+\alpha)x^2(x-\alpha)^2 \\
+    h_1(x)=x(x+\alpha)^2(x-\alpha)^2 \\
+    h_2(x)=(x-\alpha)(x+\alpha)^2x^2
+   \end{array}
+$$
+2) $\dfrac{f^{(6)}(\xi)}{6!}(x+\alpha)^2x^2(x-\alpha)^2 $\\
+3)
+$$ \begin{cases}
+    A+B+C=\int_{-2}^2x^0dx=4 \\
+    A(-\alpha)+C(\alpha)=\int_{-2}^2x^1dx=0 \\
+    A(-\alpha)^2+C(\alpha)^2=\int_{-2}^2x^2dx=\dfrac{16}{3} \\
+    A(-\alpha)^3+C(\alpha)^3=\int_{-2}^2x^3dx=0 \\
+    A(-\alpha)^4+C(\alpha)^4=\int_{-2}^2x^4dx=\dfrac{64}{5} \\
+   \end{cases}
+$$
+$$\begin{cases}
+   A=\dfrac{10}{9} \\
+   B=\dfrac{16}{9} \\
+   C=\dfrac{10}{9} \\
+   \alpha=\sqrt{\dfrac{12}{5}}
+  \end{cases} $$
+4)
+$$
+  \int^2_{-2}\dfrac{f^{(6)}(\xi)}{6!}(x+\alpha)^2x^2(x-\alpha)^2
+$$
+$$
+=\dfrac{1024}{175}\dfrac{f^{(6)}(\xi)}{6!}=\dfrac{64}{7875}f^{(6)}(\xi)
+$$
+=======
+1) $g_0(x)f(-\alpha)+g_1(x)f(0)+g_2(x)f(\alpha)+
+     h_0(x)f'(-\alpha)+h_1(x)f'(0)+h_2(x)f'(\alpha)$其中
+$$ \begin{array}{l}
+    g_0(x)=[1-2(x+\alpha)(\dfrac{1}{-\alpha}+\dfrac{1}{-2\alpha})]x^2(x-\alpha)^2 \\
+    g_1(x)=[1-2(x)(\dfrac{1}{\alpha}+\dfrac{1}{-\alpha})](x+\alpha)^2(x-\alpha)^2 \\
+    g_2(x)=[1-2(x-\alpha)(\dfrac{1}{2\alpha}+\dfrac{1}{\alpha})](x+\alpha)^2  x^2 \\
+    h_0(x)=(x+\alpha)x^2(x-\alpha)^2 \\
+    h_1(x)=x(x+\alpha)^2(x-\alpha)^2 \\
+    h_2(x)=(x-\alpha)(x+\alpha)^2x^2
+   \end{array}
+$$
+2) $\dfrac{f^{(6)}(\xi)}{6!}(x+\alpha)^2x^2(x-\alpha)^2 $ \\
+3)
+$$ \begin{cases}
+    A+B+C=\int_{-2}^2x^0dx=4 \\
+    A(-\alpha)+C(\alpha)=\int_{-2}^2x^1dx=0 \\
+    A(-\alpha)^2+C(\alpha)^2=\int_{-2}^2x^2dx=\dfrac{16}{3} \\
+    A(-\alpha)^3+C(\alpha)^3=\int_{-2}^2x^3dx=0 \\
+    A(-\alpha)^4+C(\alpha)^4=\int_{-2}^2x^4dx=\dfrac{64}{5} \\
+   \end{cases}
+$$
+$$\begin{cases}
+   A=\dfrac{10}{9} \\
+   B=\dfrac{16}{9} \\
+   C=\dfrac{10}{9} \\
+   \alpha=\sqrt{\dfrac{12}{5}}
+  \end{cases}
+$$
+4)
+$$
+  \int^2_{-2}\dfrac{f^{(6)}(\xi)}{6!}(x+\alpha)^2x^2(x-\alpha)^2
+$$
+$$
+=\dfrac{1024}{175}\dfrac{f^{(6)}(\xi)}{6!}=\dfrac{64}{7875}f^{(6)}(\xi)
+$$
+>>>>>>> .r40
+\end{sol}
+
+\end{problems}
+
+
+\clearpage
+\daan{答案}
+\clearpage
+
+\end{CJK*}
+
+\end{document}
