@@ -1,0 +1,276 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      6310,        198]*)
+(*NotebookOutlinePosition[      6939,        220]*)
+(*  CellTagsIndexPosition[      6895,        216]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(\(\( (*\ 
+      Numerical\ Integerate\ *) \)\(\[IndentingNewLine]\)\(NIntegrate[
+      Sin[Cos[x^2]], {x, 1, 2}]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(-0.3862889982240095`\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(NIntegrate[
+      Sqrt[u\ v]/\((Sin[x] + y)\), {x, 0, 1}, {y, 1, 2}, {u, 2, 3}, {v, 3, 
+        4}]\)], "Input"],
+
+Cell[BoxData[
+    \(1.5689215353442296`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(NIntegrate[1/Sqrt[Abs[x]], {x, \(-1\), 0, 1}]\)], "Input"],
+
+Cell[BoxData[
+    \(4.000000000032327`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(NIntegrate[
+      1/x, {x, \(-1\), \(-I\), 1, I, \(-1\)}]\), "\[IndentingNewLine]", 
+    \( (*\ analytic\ solution\ is\ 2  Pi\ I\ *) \)}], "Input"],
+
+Cell[BoxData[
+    \(1.1102230246251565`*^-16 + 6.28318530717957`\ \[ImaginaryI]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(Clear[f, g, a, b, h, tf];\)\), "\[IndentingNewLine]", 
+    \(f[x_] = 1 + x^2; a = 0; b = 0.6;\), "\[IndentingNewLine]", 
+    \(tf = Integrate[f[x], {x, a, b}]\), "\[IndentingNewLine]", 
+    \(\(g[f_, a_, b_, h_] := 
+        h \((f[a]/2.  + f[b]/2.  + 
+              NSum[f[k], {k, a + h, b - h, 
+                  h}])\);\)\), "\[IndentingNewLine]", 
+    \(g[f, a, b, 0.04] - tf\), "\[IndentingNewLine]", 
+    \(g[f, a, b, 0.02] - tf\), "\[IndentingNewLine]", 
+    \(g[f, a, b, 0.01] - tf\), "\[IndentingNewLine]", 
+    \(g[f, a, b, 0.005] - tf\), "\[IndentingNewLine]", 
+    \(g[f, a, b, 0.0025] - tf\), "\[IndentingNewLine]", 
+    \(\)}], "Input"],
+
+Cell[BoxData[
+    \(0.6719999999999999`\)], "Output"],
+
+Cell[BoxData[
+    \(0.00016000000000016001`\)], "Output"],
+
+Cell[BoxData[
+    \(0.000040000000000151026`\)], "Output"],
+
+Cell[BoxData[
+    \(0.000010000000000176534`\)], "Output"],
+
+Cell[BoxData[
+    \(2.500000000349445`*^-6\)], "Output"],
+
+Cell[BoxData[
+    \(6.249999999763389`*^-7\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(\( (*\ Gaussian\ Integration\ *) \)\(\[IndentingNewLine]\)\(<< 
+      NumericalMath`GaussianQuadrature`\)\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(Clear[f, k];\)\), "\[IndentingNewLine]", 
+    \(f[x_] = x\ Sin[x]\), "\[IndentingNewLine]", 
+    \(Integrate[f[x], {x, \(-1\), 1}]\  // N\), "\[IndentingNewLine]", 
+    \(xw = GaussianQuadratureWeights[2, \(-1\), 1]\), "\[IndentingNewLine]", 
+    \(NSum[
+      xw[\([k, 2]\)] f[xw[\([k, 1]\)]], {k, 1, 
+        Length[xw]}]\), "\[IndentingNewLine]", 
+    \(xw = GaussianQuadratureWeights[4, \(-1\), 1]\), "\[IndentingNewLine]", 
+    \(NSum[xw[\([k, 2]\)] f[xw[\([k, 1]\)]], {k, 1, Length[xw]}]\)}], "Input"],
+
+Cell[BoxData[
+    \(x\ Sin[x]\)], "Output"],
+
+Cell[BoxData[
+    \(0.6023373578795135`\)], "Output"],
+
+Cell[BoxData[
+    \({{\(-0.5773502691896257`\), 1.`}, {0.5773502691896257`, 
+        1.`}}\)], "Output"],
+
+Cell[BoxData[
+    RowBox[{\(Part::"pspec"\), \(\(:\)\(\ \)\), "\<\"Part specification \
+\\!\\(k\\) is neither an integer nor a list of integers. \
+\\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", ButtonStyle->\\\"RefGuideLinkText\
+\\\", ButtonFrame->None, ButtonData:>\\\"General::pspec\\\"]\\)\"\>"}]], \
+"Message"],
+
+Cell[BoxData[
+    RowBox[{\(Part::"pspec"\), \(\(:\)\(\ \)\), "\<\"Part specification \
+\\!\\(k\\) is neither an integer nor a list of integers. \
+\\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", ButtonStyle->\\\"RefGuideLinkText\
+\\\", ButtonFrame->None, ButtonData:>\\\"General::pspec\\\"]\\)\"\>"}]], \
+"Message"],
+
+Cell[BoxData[
+    \(0.6302420371136114`\)], "Output"],
+
+Cell[BoxData[
+    \({{\(-0.8611363115940526`\), 
+        0.3478548451374539`}, {\(-0.3399810435848563`\), 
+        0.6521451548625463`}, {0.3399810435848563`, 
+        0.6521451548625463`}, {0.8611363115940526`, 
+        0.3478548451374539`}}\)], "Output"],
+
+Cell[BoxData[
+    RowBox[{\(Part::"pspec"\), \(\(:\)\(\ \)\), "\<\"Part specification \
+\\!\\(k\\) is neither an integer nor a list of integers. \
+\\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", ButtonStyle->\\\"RefGuideLinkText\
+\\\", ButtonFrame->None, ButtonData:>\\\"General::pspec\\\"]\\)\"\>"}]], \
+"Message"],
+
+Cell[BoxData[
+    RowBox[{\(Part::"pspec"\), \(\(:\)\(\ \)\), "\<\"Part specification \
+\\!\\(k\\) is neither an integer nor a list of integers. \
+\\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", ButtonStyle->\\\"RefGuideLinkText\
+\\\", ButtonFrame->None, ButtonData:>\\\"General::pspec\\\"]\\)\"\>"}]], \
+"Message"],
+
+Cell[BoxData[
+    \(0.602339591343119`\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for X",
+ScreenRectangle->{{0, 1024}, {0, 768}},
+WindowSize->{520, 600},
+WindowMargins->{{201, Automatic}, {Automatic, 3}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 149, 3, 43, "Input"],
+Cell[1928, 58, 58, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2023, 64, 132, 3, 43, "Input"],
+Cell[2158, 69, 53, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2248, 75, 78, 1, 27, "Input"],
+Cell[2329, 78, 52, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2418, 84, 168, 3, 43, "Input"],
+Cell[2589, 89, 93, 1, 30, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2719, 95, 672, 13, 187, "Input"],
+Cell[3394, 110, 53, 1, 27, "Output"],
+Cell[3450, 113, 57, 1, 27, "Output"],
+Cell[3510, 116, 58, 1, 27, "Output"],
+Cell[3571, 119, 58, 1, 27, "Output"],
+Cell[3632, 122, 56, 1, 30, "Output"],
+Cell[3691, 125, 56, 1, 30, "Output"]
+}, Open  ]],
+Cell[3762, 129, 142, 2, 43, "Input"],
+
+Cell[CellGroupData[{
+Cell[3929, 135, 530, 9, 123, "Input"],
+Cell[4462, 146, 43, 1, 27, "Output"],
+Cell[4508, 149, 53, 1, 27, "Output"],
+Cell[4564, 152, 104, 2, 27, "Output"],
+Cell[4671, 156, 311, 5, 33, "Message"],
+Cell[4985, 163, 311, 5, 33, "Message"],
+Cell[5299, 170, 53, 1, 27, "Output"],
+Cell[5355, 173, 256, 5, 43, "Output"],
+Cell[5614, 180, 311, 5, 33, "Message"],
+Cell[5928, 187, 311, 5, 33, "Message"],
+Cell[6242, 194, 52, 1, 27, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+
