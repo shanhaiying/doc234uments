@@ -1,0 +1,261 @@
+\documentclass[12pt,letter]{ustcexam}
+%\input{greektex}
+\newcommand\uppi{\text{\gr p}}
+
+\def\ds{\displaystyle}
+
+%\renewcommand{\biaoti}[1]{\begin{spacing}{1.3}\begin{center}\Large\zihao{2}
+%                          #1\end{center}\end{spacing}\medskip}
+
+\begin{document}
+%\begin{CJK*}{UTF8}{song}
+%\CJKindent \CJKtilde % \CJKcaption{GB}
+% 以下是将试卷的密封线。
+\mifengxian
+
+\pagestyleB
+%\juemi
+% 中国科学技术大学 试卷标准
+%\biaoti{\huge 中国科学技术大学\\[0.2cm]
+%     \heiti 2007 -- 2008 学年 第\ 1\ 学期考试试卷B }
+\YearB{2008}
+\YearE{2009}
+\Xueqi{1}
+\Kemu{数\ 值\ 计\ 算\ 方\ 法\ }
+%\MaketitleB   %使用B卷
+\Makedefen
+
+%\begin{minipage}{0.9 \textwidth}
+%{\zihao{5}
+%考试科目：\underline{ 计\ 算\ 方\ 法\ }\hspace{4.93cm}
+%得分：\underline{\hspace{2.5cm}}%\hspace{5cm}
+%\\
+%学生所在系：\underline{\hspace{2.5cm}}\hspace{0.25cm}
+%姓名：\underline{\hspace{2.5cm}}\hspace{0.25cm}
+%学号：\underline{\hspace{2.5cm}}%\hspace{1cm}
+%}
+%\end{minipage}
+\vspace{1em}
+\begin{notice}
+\item 答卷前，考生务必将所在系、姓名、学号等填写清楚。
+\item 请考生在答卷纸左侧留出装订区域。
+\item 本试卷为闭卷考试。共~\numquestions{}~道试题，
+      满分~100~分，考试时间~120~分钟。
+\item 计算结果保留4位小数。
+\end{notice}
+
+\begin{problems}
+\pingfen{一、填空题}
+\qu (6分) 设 $X=(x_1,x_2,x_3)^T$，则如下的公式能否成为向量范数， \\
+$|x_1|+|x_2+x_1|+|x_3|$\twob\oneb ，
+$x_1^2+|x_2|+2|x_3|$\twob\oneb 。
+\begin{sol}
+ 否\rfen{2}，否\rfen{2}
+\end{sol}
+
+\qu (6分) 设 $ f(x)=2x^3+3x+5 $，则$f[-1,0,1]=$\twob\twob ，$ f[0,1,2,3]=$ \twob\twob
+\begin{sol}
+ 2\rfen{2}，5\rfen{2}
+\end{sol}
+
+\question (6分) 设 $ \ds{A=\begin {pmatrix} 1 & 3 & 1 \\
+6 & -2 & 2 \\ 3 & 1 & 7 \end {pmatrix}}$,\  则 $ \|A\|_1=$ \sixb ，
+$ \|A\|_\infty =$ \sixb 。
+\begin{sol}
+10\rfen{2},12\rfen{2}
+\end{sol}
+
+\qu (6分) 用追赶法解$n$阶3对角方程组的乘除法的计算量为$a O(n^b)$，则$a=$\fourb $b=$\fourb。
+\begin{sol}
+3  \rfen3
+\end{sol}
+
+\qu (6分) 写出以$(a,f(a),f'(a)),(0,f(0)),(b,f(b))$为插值条件构造的插值多项式的误差\sixb\sixb\tenb 。
+\begin{sol}
+a
+\end{sol}
+
+\newpage
+\pingfen{二、解答题}
+\qu (10分) 对数据 
+\begin{tabular}{c|cccc} $x_i$  & 1 & 2.25 & 4.0 & 4.41
+\\\hline $f(x_i)$ & 1.1 & 2.5 & 2.2 & 1.4
+\end{tabular} ，试对它作出$y(x)=a+b \sqrt{x}$形式的拟合函数。
+
+\vspace*{0.4\textheight}
+
+\qu (10分) 取初值$1.2$，用Newton迭代法求$\sqrt[5]{4}$的近似值（计算3步）。
+
+%\vspace*{0.4\textheight}
+
+\newpage
+
+\qu (10分) 考虑常微分方程初值问题
+$$ \left\{\begin{array}{l}y'=e^x \cos y \mbox{  ,  } 0\leqslant x\leqslant 1 \\
+y(0)=0
+\end{array}\right.$$
+用如下4阶Runge-Kutta格式求$y(0.05)$的近似，取步长$h=0.05$
+$$
+\left\{\begin{array}{l}
+y_{n+1}=y_n+\dfrac{h}{6}(K_1+2K_2+2K_3+K_4) \\
+K_1=f(x_n,y_n) \\
+k_2=f(x_n+\dfrac{1}{2}h,y_n+\dfrac{1}{2}hK_1) \\
+k_2=f(x_n+\dfrac{1}{2}h,y_n+\dfrac{1}{2}hK_2) \\
+k_2=f(x_n+h,y_n+hK_3)
+\end{array}\right.
+$$
+\begin{sol}
+\begin{tabular}{|l|l|l}
+\hline
+k1 & 1 & \rfen2 \\
+k2 & 1.0250 & \rfen2 \\
+k3 & 1.0250 & \rfen2 \\
+k4 & 1.0499 & \rfen2 \\
+y(0.05) & 0.0512 & \rfen2 \\
+k1 & 1.0499 & \rfen1 \\
+k2 & 1.0747 & \rfen1 \\
+k3 & 1.0746 & \rfen1 \\
+k4 & 1.0991 & \rfen1 \\
+y(0.1) & 0.1050 & \rfen1 \\
+\hline
+\end{tabular}
+\end{sol}
+
+\vspace*{0.25\textheight}
+
+\qu (10分) 给定求积公式
+$$\int^1_{-1}f(x)dx \thickapprox Af(-\frac{1}{2})+Bf(0)+Cf(\frac{1}{2})$$
+试求$A,B,C$使其具有尽可能高的代数精度，并指出所达到的代数精度。
+\begin{sol}
+$\left\{\begin{array}{l}
+A+B+C=2=\int_{-1}^{1}1dx \\
+-\dfrac{1}{2}A+\dfrac{1}{2}C=0=\int_{-1}^{1}x dx \\
+\dfrac{1}{4}A+\dfrac{1}{4}C=2=\int_{-1}^{1}x^2dx \\
+\end{array}\right.$
+解得$A=C=\dfrac{4}{3},B=-\dfrac{2}{3}$ \rfen{10}\\
+$\int_{-1}^{1}x^3dx=0=-\dfrac{1}{8}A+\dfrac{1}{8}C$ \rfen{2}，
+$\int_{-1}^{1}x^4dx=\dfrac{2}{5}\neq \dfrac{1}{16}A+\dfrac{1}{16}C
+=\dfrac{1}{6}$ \rfen{2}，代数精度为$4$ \rfen{1}
+\end{sol}
+
+\newpage
+\qu (15分)  写出用Gauss-Seidel方法求解下列方程组
+$$\begin {cases} 10x_1+x_2-4x_3=5\\ 2 x_1+5x_2+ x_3=-4 \\ x_1+x_2+5x_3=2
+\end{cases}$$
+1) 迭代格式；  2) 迭代矩阵； 3) 讨论迭代矩阵是否收敛？
+\begin{sol}
+1)(5分)
+$
+\left\{\begin{array}{l}
+x_1^{k+1}=(-x_2^k+x_3^k+5)/10 \\
+x_2^{k+1}=(-x_1^{k+1}-x_3^k-4)/5 \\
+x_3^{k+1}=(-x_1^{k+1}-x_2^{k+1}+2)/2
+\end{array}\right.
+$ \\
+2)(5分)
+$
+\left(\begin{array}{ccc}
+0 & -1/10 & 1/10 \\
+0 & 1/50 & -11/50 \\
+0 & 1/25 & 3/50
+\end{array}\right)
+$ \\
+3) (5分)谱半径为$(2\pm i\sqrt{21})/50,0$或$\|S\|_1=19/50<1$
+   或$\|S\|_{\infty}=12/50<1$
+\end{sol}
+
+%\vspace*{0.4\textheight}
+\newpage
+\qu (15分)用 $LDL^T$分解求解下列方程组
+\[  \qquad \begin{cases}
+2x_1+ 4x_2 - 2x_3&=-6 \\
+4x_1+ 12x_2 + 8x_3&=12\\
+-2x_1+ 8x_2 + 39x_3&=80
+\end{cases}\]
+\begin{sol}
+$
+L=
+\left(\begin{array}{ccc}
+1 &  &  \\
+-1/2 & 1 &  \\
+-1/3 & 4/13 & 1
+\end{array}\right)
+D=
+\left(\begin{array}{ccc}
+-6 &  &  \\
+ & 13/2 &  \\
+ &  & 236/39
+\end{array}\right) \\ \mbox{或}\\
+L=
+\left(\begin{array}{ccc}
+1 &  &  \\
+-0.5 & 1 &  \\
+-0.3333 & 0.3077 & 1
+\end{array}\right)
+D=
+\left(\begin{array}{ccc}
+-6 &  &  \\
+ & 6.5 &  \\
+ &  & 6.0513
+\end{array}\right)
+$
+(8分)\\
+$
+\left\{\begin{array}{l}
+Ly=b \\
+Dz=y \\
+L^Tx=z
+\end{array}\right.
+=>
+y=
+\left(\begin{array}{l}
+-5 \\
+35/2 \\
+-236/39
+\end{array}\right)
+z=
+\left(\begin{array}{l}
+5/6 \\
+35/13 \\
+-1
+\end{array}\right)
+x=
+\left(\begin{array}{l}
+2 \\
+3 \\
+-1
+\end{array}\right)
+\\ \mbox{或} \\
+y=
+\left(\begin{array}{l}
+-5 \\
+17.5 \\
+-6.0513
+\end{array}\right)
+z=
+\left(\begin{array}{l}
+0.8333 \\
+2.6923 \\
+-1.0
+\end{array}\right)
+x=
+\left(\begin{array}{l}
+2.0 \\
+3.0 \\
+-1.0
+\end{array}\right)
+$(6分)
+\end{sol}
+
+\newpage
+
+\end{problems}
+
+
+\clearpage
+\daan{答案}
+\clearpage
+
+%\end{CJK*}
+
+\end{document}
