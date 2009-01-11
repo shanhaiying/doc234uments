@@ -178,19 +178,19 @@ $(3分)
 \begin{enumerate}
 \item (6分) 考虑常微分方程初值问题
 $$ \left\{\begin{array}{l}y'=f(x,y)=y^2 x \mbox{  ,  } 0\leqslant x\leqslant 1 \\
-y(0)=0
+y(0)=1
 \end{array}\right.$$
 用如下的改进Euler格式求$y(0.05)$的近似，取步长$h=0.05$
 $$
 \left\{\begin{array}{l}
 y_{n+1}=y_n+\dfrac{h}{2}(k_1+k_2) \\
 k_1=f(x_n,y_n) \\
-k_2=f(x_n+h,y_n+hK_1) 
+k_2=f(x_n+h,y_n+hk_1) 
 \end{array}\right.
 $$
 \item (5分) 求解微分方程$y'(x)=f(x,y)$的线性多步法
 $$
-  y_{n+1}=-\dfrac{3}{2}y_n+3y_{n-1}-\dfrac{1}{2}y_{n-1}+3hf_n
+  y_{n+1}=-\dfrac{3}{2}y_n+3y_{n-1}-\dfrac{1}{2}y_{n-2}+3hf_n
 $$
 的局部截断误差，其中$f_n=f(x_n,y_n)$
 \item (4分) 若用上面的多步法来求解的话，起步计算可以用什么格式？请简述理由。
