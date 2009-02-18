@@ -22,7 +22,7 @@
 \YearE{2009}
 \Xueqi{1}
 \Kemu{数\ 值\ 计\ 算\ 方\ 法\ }
-%\MaketitleB   %使用B卷
+\MaketitleB   %使用B卷
 \Makedefen
 
 %\begin{minipage}{0.9 \textwidth}
@@ -47,50 +47,38 @@
 \begin{problems}
 \pingfen{一、填空题}
 \qu (6分) 设 $X=(x_1,x_2,x_3)^T$，则如下的公式能否成为向量范数， \\
-$|x_1|+2|x_2|+|x_1+3x_3|$\twob\oneb ，
+$|x_1|+2|x_2|+|x_1-3x_3|$\twob\oneb ，
 $|x_1|+|x_2+2x_3|$\twob\oneb 。
 \begin{sol}
- 否\rfen{2}，否\rfen{2}
+ 否\rfen{3}，否\rfen{3}
 \end{sol}
 
-\qu (6分) 设 $ f(x)=2x^5+7 $，则$f[-1,0,1]=$\twob\twob ，
-$f[1,2,3,4,5,6]=$ \twob\twob
-\begin{sol}
- 2\rfen{2}，5\rfen{2}
-\end{sol}
-
-\question (6分) 设 $ \ds{A=\begin {pmatrix} 8 & 3 & 1 \\
-2 & -2 & -7 \\ 0 & 5 & 3 \end {pmatrix}}$,\  则 $ \|A\|_1=$ \sixb ，
+\question (6分) 设 $ \ds{A=\begin {pmatrix} -8 & 3 & 2 \\
+2 & -2 & -9 \\ -1 & 5 & 3 \end {pmatrix}}$,\  则 $ \|A\|_1=$ \sixb ，
 $ \|A\|_\infty =$ \sixb 。
 \begin{sol}
-10\rfen{2},12\rfen{2}
+14\rfen{2},13\rfen{2}
 \end{sol}
 
-\qu (6分) 用Gauss消元法解线性方程组的可行性条件是矩阵$A$\tenb\fourb，
-用什么方法可以有效地克服这个缺陷？\fourb\fourb。
+\qu (6分) 用直接分解法解线性方程组的可行性条件是矩阵$A$\tenb\fourb。
 \begin{sol}
 3  \rfen3
 \end{sol}
 
-\question (6分) 用Jacobi方法求矩阵 $ \ds{A=\begin {pmatrix} 5 & 1 & 4 \\
-1 & 0 & 2 \\ 4 & 2 & 3 \end {pmatrix}}$的所有特征值，设第一步的Givens旋转阵是
-$Q(p,q,\theta)$，则 $p=$\fourb ，$q=$\fourb 。
+\question (6分) QR方法可以用来求什么类型矩阵的所有特征值？\fourb\fourb 。
 \begin{sol}
 10\rfen{2},12\rfen{2}
 \end{sol}
 
-\qu (6分) 三次样条函数是指在每个小区间上是次数不高于\twob 次多项式，
-但整体具有\twob 阶连续导数的函数。
+\qu (6分) $\{l_i(x),i=0,\cdots 7\}$是节点$\{0,1,\cdots,7\}$上的Lagrange插值基函数，
+则$\sum_{i=0}^7l_i(x)(2 i^5+7)=$\twob\fourb。
 \begin{sol}
 3,2
 \end{sol}
 
-\qu (6分) 写出求$\sqrt[3]{5}$的Nowton迭代格式。\tenb\tenb
-\begin{sol}
-$x_{n+1}=$
-\end{sol}
+\qu (6分) 数值求积公式$ \int_a^b f(x) dx=(b-a)f\left(b\right) $的误差为\tenb。
 
-\qu (6分) 写出以$(a,f(a),f'(a)),(0,f(0),f'(0)),(b,f(b))$为插值条件构造的插值多项式的误差\\ \sixb\sixb\tenb 。
+\qu (6分) 写出以$(a,f(a)),(0,f(0)),(b,f(b),f'(b))$为插值条件构造的插值多项式的误差\\ \sixb\sixb\tenb 。
 \begin{sol}
 a
 \end{sol}
@@ -100,13 +88,14 @@ a
 \qu (8分) 对数据 
 \begin{tabular}{c|cccc} $x_i$  & 1 & 2 & 3 & 4
 \\\hline $f(x_i)$ & 1.1 & 2.5 & 2.2 & 1.4
-\end{tabular} ，试对它作出$y(x)=a+b x^2$形式的拟合函数。
+\end{tabular} ，
+构造差商表，写出相应的Newton插值多项式，并求出$f(2.5)$的近似值。
 
 \vspace*{0.4\textheight}
 
 \qu (5分) 求数值积分公式
 $
- \displaystyle \int_a^b f(x) dx=(b-a)f\left(\dfrac{a+b}{2}\right)
+ \displaystyle 
 $
 的误差。
 
