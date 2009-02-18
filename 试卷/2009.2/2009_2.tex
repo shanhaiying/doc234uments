@@ -9,7 +9,7 @@
 
 \begin{document}
 %\begin{CJK*}{UTF8}{song}
-%\CJKindent \CJKtilde % \CJKcaption{GB}
+%  \CJKindent \CJKtilde % \CJKcaption{GB}
 % 以下是将试卷的密封线。
 \mifengxian
 
@@ -60,18 +60,18 @@ $ \|A\|_\infty =$ \sixb 。
 14\rfen{2},13\rfen{2}
 \end{sol}
 
-\qu (6分) 用直接分解法解线性方程组的可行性条件是矩阵$A$\tenb\fourb。
+\qu (3分) 用直接分解法解线性方程组的可行性条件是矩阵$A$\tenb\fourb。
 \begin{sol}
 3  \rfen3
 \end{sol}
 
-\question (6分) QR方法可以用来求什么类型矩阵的所有特征值？\fourb\fourb 。
+\question (3分) QR方法可以用来求什么类型矩阵的所有特征值？\fourb\fourb 。
 \begin{sol}
 10\rfen{2},12\rfen{2}
 \end{sol}
 
-\qu (6分) $\{l_i(x),i=0,\cdots 7\}$是节点$\{0,1,\cdots,7\}$上的Lagrange插值基函数，
-则$\sum_{i=0}^7l_i(x)(2 i^5+7)=$\twob\fourb。
+\qu (6分) $\{l_i(x),i=0,\cdots 7\}$是节点$\{0,1,\cdots,7\}$上的Lagrange插值基函数， \\
+则$\displaystyle \sum_{i=0}^7l_i(x)(2 i^5+7)=$\twob\fourb。
 \begin{sol}
 3,2
 \end{sol}
@@ -83,9 +83,20 @@ $ \|A\|_\infty =$ \sixb 。
 a
 \end{sol}
 
+\question (9分) 设 $ \ds{A=\begin {pmatrix} 2 & -1 & 0 \\
+3 & -2 & -3 \\ 0 & 4 & -10 \end {pmatrix}}$,\  则 
+$ A=\begin{pmatrix} \twob & 0 & 0 \\ \twob & \twob & 0 \\ \twob & \twob &\twob
+\end{pmatrix} \begin{pmatrix} 1 & \twob & \twob \\ 0 & 1 & \twob \\ 0 & 0 & 1 
+\end{pmatrix} $ 。
+\begin{sol}
+$ A=\begin{pmatrix} 2 & 0 & 0 \\ 3 & 1 & 0 \\ 0 & 4 & 2\end{pmatrix}
+ \begin{pmatrix} 1 & -1 & 0 \\ 0 & 1 & -3 \\ 0 & 0 & 1 
+\end{pmatrix} $ 。
+\end{sol}
+
 \newpage
 \pingfen{二、解答题}
-\qu (8分) 对数据 
+\qu (12分) 对数据 
 \begin{tabular}{c|cccc} $x_i$  & 1 & 2 & 3 & 4
 \\\hline $f(x_i)$ & 1.1 & 2.5 & 2.2 & 1.4
 \end{tabular} ，
@@ -93,7 +104,7 @@ a
 
 \vspace*{0.4\textheight}
 
-
+\qu (12分) 取初值$2.0$，用Newton迭代法求$\sqrt[3]{5}$的近似（最多只计算3步）。
 %\vspace*{0.4\textheight}
 
 \newpage
@@ -124,75 +135,32 @@ $ \\
 
 %\vspace*{0.4\textheight}
 \newpage
-\qu (12分)用$LU$分解，其中$L$为单位下三角阵，$U$为上三角阵，求解下列方程组
-\[  \qquad \begin{cases}
-2x_1+ 0.5x_2 + x_3&=0.5 \\
-2x_1+ 1.5x_2 + x_3&=-0.5\\
-x_1-0.75x_2 + 3.5x_3&=4.25
-\end{cases}\]
+\qu (14分)求系数$A,B,C,\alpha$，使得数值积分公式
+$$
+  \int_{-1}^2f(x)dx=Af(\alpha)+Bf(0)+Cf(\alpha)
+$$
+具有尽可能高的代数精度，并求出该公式的代数精度。
 \begin{sol}
-$
-L=
-\left(\begin{array}{ccc}
-1 &  &  \\
-1 & 1 &  \\
-0.5 & -1 & 1
-\end{array}\right)
-U=
-\left(\begin{array}{ccc}
-2 & 0.5  & 1 \\
- & 1 & 0  \\
- &  & 3
-\end{array}\right)
-$
-(9分)\\
-$
-x=
-\left(\begin{array}{l}
-0 \\
--1 \\
-1
-\end{array}\right)
-$(3分)
+haha，我也不知道答案
 \end{sol}
 
 \newpage
 
-\qu (15分)
-\begin{enumerate}
-\item (6分) 考虑常微分方程初值问题
-$$ \left\{\begin{array}{l}y'=f(x,y)=y^2 x \mbox{  ,  } 0\leqslant x\leqslant 1 \\
-y(0)=1
+\qu (5分) 考虑常微分方程初值问题
+$$ \left\{\begin{array}{l}y'=x^2+y \mbox{  ,  } 0\leqslant x\leqslant 1 \\
+y(1)=1
 \end{array}\right.$$
-用如下的改进Euler格式求$y(0.05)$的近似，取步长$h=0.05$
+用如下4阶Runge-Kutta格式求$y(0.05)$的近似，取步长$h=0.05$
 $$
 \left\{\begin{array}{l}
-y_{n+1}=y_n+\dfrac{h}{2}(k_1+k_2) \\
-k_1=f(x_n,y_n) \\
-k_2=f(x_n+h,y_n+hk_1) 
+y_{n+1}=y_n+\dfrac{h}{6}(K_1+2K_2+2K_3+K_4) \\
+K_1=f(x_n,y_n) \\
+k_2=f(x_n+\dfrac{1}{2}h,y_n+\dfrac{1}{2}hK_1) \\
+k_2=f(x_n+\dfrac{1}{2}h,y_n+\dfrac{1}{2}hK_2) \\
+k_2=f(x_n+h,y_n+hK_3)
 \end{array}\right.
 $$
-\item (5分) 求解微分方程$y'(x)=f(x,y)$的线性多步法
-$$
-  y_{n+1}=-\dfrac{3}{2}y_n+3y_{n-1}-\dfrac{1}{2}y_{n-2}+3hf_n
-$$
-的局部截断误差，其中$f_n=f(x_n,y_n)$
-\item (4分) 若用上面的多步法来求解的话，起步计算可以用什么格式？请简述理由。
-\end{enumerate}
-\begin{sol}
-1)
-\begin{tabular}{|l|l|l}
-\hline
-k1 & 1 & \rfen2 \\
-k2 & 1.0250 & \rfen2 \\
-y(0.05) & 0.0512 & \rfen2 \\
-\hline
-\end{tabular}
 
-2) $O(h^4)$
-
-3) 2阶Runge-Kutta格式，因为它的局部截断误差为$O(h^3)$，不会影响整体的$O(h^3)$的精度
-\end{sol}
 
 \vspace*{0.25\textheight}
 
