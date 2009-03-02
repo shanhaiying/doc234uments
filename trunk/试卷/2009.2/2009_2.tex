@@ -105,6 +105,15 @@ $ A=\begin{pmatrix} 2 & 0 & 0 \\ 3 & 1 & 0 \\ 0 & 4 & 2\end{pmatrix}
 \vspace*{0.4\textheight}
 
 \qu (12分) 取初值$2.0$，用Newton迭代法求$\sqrt[3]{5}$的近似（最多只计算3步）。
+\begin{sol}
+$$
+x_{n+1}=\dfrac{2}{3}x_n+\dfrac{5}{3 x_k^2}
+$$
+2.0 \\
+1.75 \\
+1.7109 \\
+1.7100
+\end{sol}
 %\vspace*{0.4\textheight}
 
 \newpage
@@ -124,9 +133,9 @@ $ \\
 2)(5分)
 $
 \left(\begin{array}{ccc}
-0 & -1/10 & 1/10 \\
-0 & 1/50 & -11/50 \\
-0 & 1/25 & 3/50
+0 & -1/4 & 1/2 \\
+0 & 1/10 & -2/5 \\
+0 & 1/80 & -7/40
 \end{array}\right)
 $ \\
 3) (5分)谱半径为$(2\pm i\sqrt{21})/50,0$或$\|S\|_1=19/50<1$
@@ -146,8 +155,8 @@ $$
 y_{n+1}=y_n+\dfrac{h}{6}(K_1+2K_2+2K_3+K_4) \\
 K_1=f(x_n,y_n) \\
 k_2=f(x_n+\dfrac{1}{2}h,y_n+\dfrac{1}{2}hK_1) \\
-k_2=f(x_n+\dfrac{1}{2}h,y_n+\dfrac{1}{2}hK_2) \\
-k_2=f(x_n+h,y_n+hK_3)
+k_3=f(x_n+\dfrac{1}{2}h,y_n+\dfrac{1}{2}hK_2) \\
+k_4=f(x_n+h,y_n+hK_3)
 \end{array}\right.
 $$
 
@@ -158,11 +167,13 @@ $$
 
 \qu (14分)求系数$A,B,C,\alpha$，使得数值积分公式
 $$
-  \int_{-1}^2f(x)dx=Af(\alpha)+Bf(0)+Cf(\alpha)
+  \int_{-1}^2f(x)dx=Af(-\alpha)+Bf(0)+Cf(\alpha)
 $$
 具有尽可能高的代数精度，并求出该公式的代数精度。
 \begin{sol}
-haha，我也不知道答案
+$$
+A+B+C=\int_{-1}^21dx=3
+$$
 \end{sol}
 
 \newpage
